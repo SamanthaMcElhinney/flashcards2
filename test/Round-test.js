@@ -3,7 +3,7 @@ const expect = chai.expect;
 
 const Round = require("../src/Round")
 const Card = require("../src/Card");
-// const Turn = require("../src/Turn")
+const Turn = require("../src/Turn")
 const Deck = require("../src/Deck")
 
 describe("Round", () => {
@@ -44,5 +44,14 @@ describe("Round", () => {
     })
     it("should have a method that always returns the current card being played", () => {
         expect(round.returnCurrentCard()).to.deep.equal(card1)
+    })
+    it("should have a property that tracks the number of turns taken and starts at 0", () => {
+        expect(round.turns).to.equal(0)
+    })
+    it("should have a property of incorrect guesses", () => {
+        expect(round.incorrectGuesses).to.deep.equal([])
+    })
+    it("should have a method to take turns that takes in a guess as a parameter and creates a new Turn instance ", () => {
+        expect(round.takeTurn("sea otter")).to.equal()
     })
 })
