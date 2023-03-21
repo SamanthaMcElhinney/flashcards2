@@ -13,14 +13,21 @@ class Round {
         return this.currentCard
     }
 
-    takeTurn(guess){
+    takeTurn(guess) {
         let turn = new Turn(guess, this.currentCard)
         turn.evaluateGuess()
-        this.turns ++
-        if(!turn.evaluateGuess()) {
-            this.incorrectGuesses.push(this.currentCard)
+        this.turns++
+        if (!turn.evaluateGuess()) {
+            this.incorrectGuesses.push(this.currentCard.id)
         }
+        return turn.giveFeedback()
+    }
+    calculatePercentCorrect(){
+        //incorrectGuesses.length, this.turns
+        let wins = this.turns - this.incorrectGuesses.length
+        let percent = (wins/this.turns) * 100
+        return percent.toFixed(2)
     }
 }
 
-module.exports = Round
+    module.exports = Round
