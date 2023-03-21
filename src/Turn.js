@@ -1,12 +1,7 @@
 class Turn{
     constructor(guess, card){
         this.guess = guess
-        //When would I instantiate card?
         this.card = card
-
-//method to evaluate guess so we want to check if the users guess equals the correct answer on the card
-//this.c
-//method to give feedback
     }
 
     returnGuess(){
@@ -26,9 +21,9 @@ class Turn{
     }
     giveFeedback(){
         if(this.evaluateGuess() === true) {
-            return 'correct!'
+            return 'Correct!'
         } else {
-            return "incorrect!"
+            return "Incorrect!"
         }
     }
 }
