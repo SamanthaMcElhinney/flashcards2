@@ -11,22 +11,22 @@ describe("Round", () => {
 
     beforeEach(() => {
         card1 = new Card(
-          1,
-          "What is Robbie's favorite animal",
-          ["sea otter", "pug", "capybara"],
-          "sea otter"
+            1,
+            "What is Robbie's favorite animal",
+            ["sea otter", "pug", "capybara"],
+            "sea otter"
         );
         card2 = new Card(
-          14,
-          "What organ is Khalid missing?",
-          ["spleen", "appendix", "gallbladder"],
-          "gallbladder"
+            14,
+            "What organ is Khalid missing?",
+            ["spleen", "appendix", "gallbladder"],
+            "gallbladder"
         );
         card3 = new Card(
-          12,
-          "What is Travis's middle name?",
-          ["Lex", "William", "Fitzgerald"],
-          "Fitzgerald"
+            12,
+            "What is Travis's middle name?",
+            ["Lex", "William", "Fitzgerald"],
+            "Fitzgerald"
         );
 
         deck = new Deck([card1, card2, card3]);
@@ -48,10 +48,29 @@ describe("Round", () => {
     it("should have a property that tracks the number of turns taken and starts at 0", () => {
         expect(round.turns).to.equal(0)
     })
-    it("should have a property of incorrect guesses", () => {
+    it("should have a property of incorrect guesses to start out as an empty array", () => {
         expect(round.incorrectGuesses).to.deep.equal([])
     })
-    it("should have a method to take turns that takes in a guess as a parameter and creates a new Turn instance ", () => {
-        expect(round.takeTurn("sea otter")).to.equal()
+    it("should have a method that gives feedback for the guess given", () => {
+        expect(round.takeTurn("sea otter")).to.equal('Correct!')
+        expect(round.takeTurn("pug")).to.equal("Incorrect!")
+    })
+    it("should store the incorrect guesses", () => {
+        round.takeTurn("pug")
+        round.takeTurn("manatee")
+        round.takeTurn("sea otter")
+        expect(round.incorrectGuesses).lengthOf(2)
+    })
+    // it("should have a method to take turns that takes in a guess as a parameter and creates a new Turn instance ", () => {
+    //     round.takeTurn("sea otter")
+    //     expect(round.takeTurn("pug")).to.equal("Incorrect!");
+    // });
+    it("should update the turn count each round", () => {
+        round.takeTurn("sea otter")
+        expect(round.turns).to.equal(1)
+        round.takeTurn("gallbladder")
+        expect(round.turns).to.equal(2)
+        round.takeTurn("pug")
+        expect(round.turns).to.equal(3)
     })
 })
