@@ -34,7 +34,7 @@ describe("Turn", () => {
     })
     it("should have a method to return the card", () => {
         expect(turn2.returnCard()).to.deep.equal({
-          cardId: 2,
+          id: 2,
           question: "What is Robbie's favorite animal",
           answers: ["sea otter", "pug", "capybara"],
           correctAnswer: "sea otter",
