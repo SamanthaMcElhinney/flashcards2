@@ -37,7 +37,6 @@ describe("Game", () => {
             "question": "What is an example of a mutator method?",
             "answers": ["sort()", "map()", "join()"],
             "correctAnswer": "sort()"
-
         })
     })
 })
