@@ -5,5 +5,5 @@ const game = new Game()
 game.start()
 
 
-console.time("You played the game in")
+console.time("✨Congrats! You played the game in");
 console.log('Your project is running...'); 
