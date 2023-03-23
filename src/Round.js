@@ -30,7 +30,7 @@ class Round {
     }
 
     endRound() {
-        console.timeLog("You played the game in")
+        console.timeLog("✨Congrats! You played the game in")
         let message = `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
         console.log(message)
         return message
