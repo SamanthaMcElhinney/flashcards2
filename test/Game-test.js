@@ -16,6 +16,7 @@ describe("Game", () => {
     it("should be an instance of game", () => {
         expect(game).to.be.an.instanceOf(Game)
     })
+
     it("should be able to create cards", () => {
         game.createCards()
         expect(game.createCards().length).to.equal(30)
@@ -39,4 +40,5 @@ describe("Game", () => {
             "correctAnswer": "sort()"
         })
     })
+    
 })
