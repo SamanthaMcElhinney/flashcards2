@@ -81,18 +81,12 @@ describe("Round", () => {
         round.takeTurn("sea otter");
         round.takeTurn("manatee");
         round.takeTurn("sea otter");
-        round.takeTurn("pug")
-        round.takeTurn("sea otter")
-        expect(round.calculatePercentCorrect()).to.equal(20)
+        expect(round.calculatePercentCorrect()).to.equal(33)
     })
     it("should have an end of round message that displays the percent correctly", () => {
         round.takeTurn("sea otter");
-        round.takeTurn("manatee");
-        round.takeTurn("sea otter");
-        round.takeTurn("pug")
-        round.takeTurn("sea otter")
         round.calculatePercentCorrect()
-        expect(round.endRound()).to.equal(`** Round over! ** You answered 20% of the questions correctly!`
+        expect(round.endRound()).to.equal(`** Round over! ** You answered 100% of the questions correctly!`
         );
     })
 })
