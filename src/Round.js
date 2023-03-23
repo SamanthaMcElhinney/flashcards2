@@ -6,7 +6,6 @@ class Round {
         this.deck = deck.cards
         this.currentCard = this.deck[0]
         this.turns = 0
-        this.time = Date.now()
         this.incorrectGuesses = []
     }
 
@@ -16,13 +15,11 @@ class Round {
 
     takeTurn(guess) {
         let turn = new Turn(guess, this.currentCard)
+        this.turns++
         if (!turn.evaluateGuess()) {
             this.incorrectGuesses.push(this.currentCard.id)
         }
-        this.turns++
-        if(this.turns < this.deck.length) {
-            this.currentCard = this.deck[this.turns]
-        }
+        this.currentCard = this.deck[this.turns]
         return turn.giveFeedback()
     }
 
@@ -33,8 +30,10 @@ class Round {
     }
 
     endRound() {
-        // console.timeLog("You played the game in")
-        return( `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
+        console.timeLog("You played the game in")
+        let message = `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+        console.log(message)
+        return message
     }
 
 
