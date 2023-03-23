@@ -51,6 +51,8 @@ describe("Round", () => {
 
     it("should have a property that tracks the number of turns taken and starts at 0", () => {
         expect(round.turns).to.equal(0)
+        round.takeTurn("sea otter")
+        expect(round.turns).to.equal(1)
     })
 
     it("should have a property of incorrect guesses to start out as an empty array", () => {
