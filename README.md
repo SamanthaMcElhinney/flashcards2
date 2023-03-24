@@ -2,7 +2,11 @@
 
 ## Description
 
-Studying has never been easier than with this flashcard application. Relax and bring your knowledge for prototypes with multiple choice questions. Keep track of your progress with scores automated with immediate feedback for correct or incorrect answers. Get a timed result for how long it takes you to complete your test. As your knowledge advances, a user can easily adapt the application and add to the data set for effective and easy studying. 
+This project is a command-line-based flashcard application that allows users to view questions, provide answers, and receive a final score upon completion of a round. The project was developed using the Test Driven Development approach.
+
+With this flashcard application, users can easily study and test their knowledge with multiple-choice questions, while also keeping track of their progress. The application provides immediate feedback for correct or incorrect answers, as well as a timed result for the duration of the test.
+
+Additionally, the application is designed for adaptability, allowing users to easily add to the data set as their knowledge advances, thus making studying more effective and efficient.
 
 ## Contributors
 
