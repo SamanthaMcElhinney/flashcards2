@@ -35,6 +35,9 @@ describe("Deck", () => {
     it("should be an instance of deck", () => {
         expect(deck).to.be.an.instanceOf(Deck)
     })
+    it("should hold cards", () => {
+        expect(deck.cards).to.have.a.lengthOf(3)
+    })
     it("should have a method to count how many cards are in the deck", () => {
         expect(deck.countCards()).to.equal(3)
     })
