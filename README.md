@@ -20,6 +20,9 @@ Additionally, the application is designed for adaptability, allowing users to ea
 
 * Javascript
 * TDD-- Mocha/Chai
+* Visual Studio Code
+* GitHub
+* Trello board
 
 ## Set-Up
 
